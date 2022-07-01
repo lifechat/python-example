@@ -2,4 +2,7 @@ once upon a time there was a king.
 he was powerful and happy.
 he had a garden.
 all the flowers in his garden were beautiful.
-he lived happily ever after.
+he lived happily ever after.do any else something
+afjeoge
+write function takes exactly 1 argument so concatenation
+check every lines 

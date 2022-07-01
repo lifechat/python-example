@@ -53,8 +53,66 @@ def readFileLoader():
     F.close()
 
 
+def display_words():
+    '''
+    从文本文件STORY.TXT中读取行数
+    从一个文本文件STORY.TXT中读取行数。
+    使用读取功能
+    并显示那些少于4个字符的单词。
+    :return: count 单词数量
+    '''
+    with open("story.txt") as F:
+        lines = F.read();
+        words = lines.split()
+        count = 0;
+        for word in words:
+            if(len(word) > 4):
+                print(word)
+                count += 1
+    return count;
 
+'''
+编写一个函数
+1.向文件写入内容:它将读取名为"happy.txt"的文本文件的内容并计算
+2.读取名为"happy.txt"的文本文件的内容并计算以"I"或 "M"开头的行数。
+'''
+def write_to_file():
+    with open('story.txt','a') as F:
+        while True:
+            text = input("enter any text:")
+            F.write(text+"\n")
+            choice = input("input more info,y/n:");
+            if choice == "n":
+                break
+
+def check_first_letter():
+    with open("happy.txt") as F:
+        value = F.read();
+        count  = 0
+        line = value .split()
+        for i in line:
+            if i[0] in ['m','M',"i","I"]:
+                count += 1;
+                print(i)
+        return count;
+
+
+'''
+计算文本文件 "happy.txt "中小写字母的数量。小写字母的数量"""
+'''
+def GetWordsLowOrUper():
+    count_lower = 0
+    count_upper = 0
+    with open('happy.txt') as F:
+        value = F.read();
+
+        for i in value:
+            if i.islower():
+                count_lower += 1;
+            elif i.isupper():
+                count_upper += 1;
+
+        return count_lower,count_upper
 
 if __name__ == '__main__':
-
-    readFileLoader();
+    print(GetWordsLowOrUper())
