@@ -1,0 +1,18 @@
+
+
+
+jfiwoeagerignje
+
+fneaigjai
+
+
+\\\\\藍色那一行的最後"token_storage"就是service的id,
+為什麼不是整串呢!!!? 因為有一些Service他們的前綴會長的一樣,
+若有相同前綴的service,用哪一個都可以達到相同物件的效果
+
+Symfony4,除了大多數的第三方元件都將Service設為private外,
+Symfony自己本身大部分的Service也都是private,所以必須透過 Dependency Injection (依賴注入)來呼叫
+
+1.在建構子內呼叫,這樣一來,當程式一載入這個class的時候,建構子內的所有物件會先被初始化(initialized) ,
+所以在這個class裡的所有function都可以透過property去呼叫物件或Service
+
